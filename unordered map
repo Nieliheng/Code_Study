@@ -1,0 +1,31 @@
+Two Sum(Leetcode1)
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> m;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (m.count(target - nums[i])) {
+                return {i, m[target - nums[i]]};
+            }
+            m[nums[i]] = i;
+        }
+        return {};
+    }
+};
+
+unordered map<int, int> m;
+定义一个名为m的哈希表，key为int，value也为int
+内部采用哈希表存储，外部通过key去检索value，key具有唯一性。
+
+#查找元素x是否存在
+1)m.find(x) != m.end()    //m中是否找到x，若未找到则返回m.end
+
+2)m.count(x) != 0
+
+#插入数据
+m.insert(Map::value_type(1,"Raoul))
+
+#遍历map
+
+m[nums[i]] = i    //添加，使第i项为 nums[i]
